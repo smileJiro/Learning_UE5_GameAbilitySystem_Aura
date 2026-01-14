@@ -46,6 +46,7 @@
 - **2026.01.11**: 다양한 GE 정책(Duration Policy, Periodic, Stacking, Modifier 등)을 조작하며 수치 변화와 생명 주기 분석
 - **2026.01.12**: GAS Attribute Clamping의 적절한 시점을 찾기위한 GAS 코드 분석
 - **2026.01.13**: AbilitySystemComponent.h GAS 코드 분석, GameplayTags 학습
+- **2026.01.14**: GameplayTag 기반의 데이터 주도형(Data-Driven) UI 알림 시스템 구현 (포션 사용 등 인게임 이벤트 연출 최적화)
 
 ---
 
