@@ -21,7 +21,7 @@ void UAuraAbilitySystemComponent::EffectApplied(UAbilitySystemComponent* ASC, co
 	FGameplayTagContainer TagContainer;
 	EffectSpec.GetAllAssetTags(TagContainer);
 	
-	EffectAssetTags.Broadcast(TagContainer); // AllAsssetTag가 필요한 애들이 이 Delegate를 구독할거야
+	EffectAssetTagsDelegate.Broadcast(TagContainer); // AllAsssetTag가 필요한 애들이 이 Delegate를 구독할거야
 	
 	
 }

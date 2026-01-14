@@ -58,7 +58,7 @@ void AAuraCharacter::InitAbilityActorInfo()
 	{
 		if(true == AuraPlayerController->IsLocalController())
 		{
-			if (AAuraHUD* AuraHUD = Cast<AAuraHUD>(AuraPlayerController->GetHUD()))
+			if (AAuraHUD* AuraHUD = Cast<AAuraHUD>(AuraPlayerController->GetHUD())) // 그래서 보면 HUD 이게 UI관련인데 UI는 클라에만 생성이되는거지  
 			{
 				AuraHUD->InitOverlay(AuraPlayerController, AuraPlayerState,AbilitySystemComponent, AttributeSet);
 			}

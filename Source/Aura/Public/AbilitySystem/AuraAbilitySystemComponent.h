@@ -26,7 +26,7 @@ public:
 	void AbilityActorInfoSet(); 
 	
 public:
-	FEffectAssetTags EffectAssetTags;
+	FEffectAssetTags EffectAssetTagsDelegate;
 
 protected:
 	void EffectApplied(UAbilitySystemComponent* ASC, const FGameplayEffectSpec& EffectSpec, FActiveGameplayEffectHandle ActiveEffectHandle);
