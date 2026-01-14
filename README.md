@@ -12,19 +12,24 @@
 
 ## 🚀 학습 및 구현 핵심 내용
 
-### 1. GAS 기초 설정 (Section 1-3)
-- `Ability System Component`와 `Attribute Set`의 연동
-- 캐릭터 및 플레이어 스테이트에 GAS 컴포넌트 이식
-- 기본 속성(HP, MP 등) 정의 및 초기화
+### 1. 프로젝트 기반 구축 및 입력 시스템 (Section 2)
+- **핵심 클래스 설계**: `Character`, `PlayerController`, `PlayerState` 간의 상속 구조 및 역할 정의
+- **Enhanced Input**: 유연한 입력 처리를 위해 인핸스드 인풋 시스템을 초기 단계에 통합
 
-### 2. 캐릭터 아키텍처 및 입력 (Section 4-5)
-- 상속 구조 설계: `CharacterBase` -> `Enemy` / `PlayerCharacter`
-- Enhanced Input을 이용한 액션 바인딩
+### 2. GAS 핵심 구조 설계 (Section 3-4)
+- **컴포넌트 연동**: `Ability System Component(ASC)`와 `Attribute Set`의 연동 및 초기화 시점(PossessedBy 등) 분석
+- **속성 관리**: Health, Mana 등 기본 Attribute 정의 및 데이터 에셋을 통한 수치 초기화
+- **멀티플레이어 대응**: 서버와 클라이언트 간의 GAS 컴포넌트 복제(Replication) 기초 구조 파악
+- **환경 최적화**: VS2022에서 Rider로 개발 환경을 전환하여 언리얼 엔진 워크플로우 생산성 향상
 
-### 3. UI 및 속성 반영 (Section 6-7)
-- Common UI 기반의 HUD 위젯 구축
-- `AttributeSet`의 값이 변경될 때 UI에 실시간 반영하는 브로드캐스트 시스템 구현
-- 데이터 에셋(Data Asset)을 활용한 위젯 컨트롤러 관리
+### 3. RPG UI 시스템 및 인터랙션 (Section 5-6)
+- **MVC 패턴 적용**: 데이터 에셋과 위젯 컨트롤러를 활용해 UI와 데이터 간의 의존성을 낮춘 구조 설계
+- **Common UI**: HUD 위젯 구축 및 `AttributeSet` 변화를 UI에 실시간 브로드캐스팅하는 시스템 구현
+- **Gameplay Effects (GE)**: Instant, Duration, Periodic 등 다양한 정책을 활용한 스탯 변경 및 상태 이상 메커니즘 검증
+
+### 4. 고급 GAS 기능 활용 (Section 7, 진행 중 🏃‍♂️)
+- **Gameplay Tags**: 태그 시스템을 활용한 액터 상태 정의 및 어빌리티 발동 조건 제어 로직 구현
+- **Deep Dive**: `AbilitySystemComponent.h` 소스 코드 분석을 통해 내부 동작 원리 및 태그 관리 로직 학습
 
 ---
 
@@ -33,6 +38,7 @@
 - **2025.12.30**: Enhanced Input 기반 캐릭터 이동 로직 작성
 - **2025.12.31**: Gameplay Ability System 구성 요소 학습
 - **2026.01.01**: UE5 멀티플레이 환경과 GAS와의 관계 학습
+- **2026.01.02 ~ 03**: VisualStudio2022 -> Rider로 개발 환경 변경 (빌드 속도 문제, 통합성 부족 문제, AI 에이전트 확장성 등 개발 효율성 고려)
 - **2026.01.05**: Gameplay Attribute Data 추가 및 Widget 생성
 - **2026.01.08**: GAS Attribute 변경에 따른 UI 데이터 바인딩 구현(MVC Pattern)
 - **2026.01.09**: 리슨 서버 2P Widget 데이터 바인딩 버그 해결
