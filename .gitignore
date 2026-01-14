@@ -1,0 +1,36 @@
+# --- Unreal Engine Generated Folders ---
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+FileOpenOrder/
+LocalBuilds/
+
+# --- IDE & Build System Files ---
+.vs/
+.vscode/
+*.sln
+*.suo
+*.sdf
+*.opensdf
+*.opendb
+*.VC.db
+*.VC.opendb
+*.code-workspace
+*.xcodeproj
+*.xcworkspace
+
+# --- OS Generated Files ---
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# --- Plugins ---
+Plugins/*/Binaries/
+Plugins/*/Intermediate/
+
+# --- User Specific Files ---
+Saved/*
+!Saved/Config/
+!Saved/Config/Windows/DefaultEditorPerProjectUserSettings.ini
