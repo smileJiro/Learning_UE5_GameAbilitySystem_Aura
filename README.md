@@ -27,10 +27,12 @@
 - **Common UI**: HUD 위젯 구축 및 `AttributeSet` 변화를 UI에 실시간 브로드캐스팅하는 시스템 구현
 - **Gameplay Effects (GE)**: Instant, Duration, Periodic 등 다양한 정책을 활용한 스탯 변경 및 상태 이상 메커니즘 검증
 
-### 4. 고급 GAS 기능 활용 (Section 7, 진행 중 🏃‍♂️)
+### 4. Gameplay Tags, DataTable 활용 및 UI 인터랙션 (Section 7)
 - **Gameplay Tags**: 태그 시스템을 활용한 액터 상태 정의 및 어빌리티 발동 조건 제어 로직 구현
-- **Deep Dive**: `AbilitySystemComponent.h` 소스 코드 분석을 통해 내부 동작 원리 및 태그 관리 로직 학습
+- **DataTable Row**: 데이터 테이블 Row에 사용할 구조체 선언 및 연동 작업, Potion 사용 시 GameplayTags + DT Row + Deletgate 기반으로 Widget 렌더링
+- **AbilitySystemComponent**: `AbilitySystemComponent.h` 소스 코드 분석을 통해 내부 동작 원리 및 태그 관리 로직 학습
 
+### 5. RPG Attribute System, Attribute Menu (Section 8-9, 진행 중 🏃‍♂️)
 ---
 
 ## 📅 학습 로그 (log)
@@ -46,7 +48,7 @@
 - **2026.01.11**: 다양한 GE 정책(Duration Policy, Periodic, Stacking, Modifier 등)을 조작하며 수치 변화와 생명 주기 분석
 - **2026.01.12**: GAS Attribute Clamping의 적절한 시점을 찾기위한 GAS 코드 분석
 - **2026.01.13**: AbilitySystemComponent.h GAS 코드 분석, GameplayTags 학습
-- **2026.01.14**: GameplayTag 기반의 데이터 주도형(Data-Driven) UI 알림 시스템 구현 (포션 사용 등 인게임 이벤트 연출 최적화)
+- **2026.01.14**: GameplayTags + DT Row + Deletgate 기반의 데이터 주도형(Data-Driven) UI 알림 시스템 구현 (포션 사용 등 인게임 이벤트 연출 최적화)
 - **2026.01.15**: HealthGlobe Widget GhostGlobe 기능 추가, GAS Attribute Clamping 리팩토링, 블루프린트 버그 해결
 
 ---
