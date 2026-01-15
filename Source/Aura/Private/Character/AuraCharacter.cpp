@@ -63,6 +63,8 @@ void AAuraCharacter::InitAbilityActorInfo()
 				AuraHUD->InitOverlay(AuraPlayerController, AuraPlayerState,AbilitySystemComponent, AttributeSet);
 			}
 		}
-		
 	}
+	
+	// server에서만 호출되도 될듯함
+	InitializePrimaryAttributes();
 }

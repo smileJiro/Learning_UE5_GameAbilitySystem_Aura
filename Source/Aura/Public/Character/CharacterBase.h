@@ -9,6 +9,7 @@
 #include "CharacterBase.generated.h" // .generated는 항상 마지막 include 여야한다.
 class UAbilitySystemComponent;
 class UAttributeSet;
+class UGameplayEffect;
 UCLASS()
 class AURA_API ACharacterBase : public ACharacter,  public IAbilitySystemInterface
 {
@@ -34,14 +35,17 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	TObjectPtr<USkeletalMeshComponent> Weapon;
 	
+protected: /* GameplayEffect 실행시 호출되는 델리게이트에 등록하기 위한 가상 함수 */
+	virtual void InitAbilityActorInfo();
+	void InitializePrimaryAttributes() const;
+	
 protected: // AuraEnemy 에서만 쓰는데 왜 이걸 CharacterBase에?
 	UPROPERTY()
 	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
 	UPROPERTY()
 	TObjectPtr<UAttributeSet> AttributeSet;
 	
-protected: /* GameplayEffect 실행시 호출되는 델리게이트에 등록하기 위한 가상 함수 */
-	
-	virtual void InitAbilityActorInfo();
-	
+protected:
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Attributes")
+	TSubclassOf<UGameplayEffect> DefaultPrimaryAttributes;
 };

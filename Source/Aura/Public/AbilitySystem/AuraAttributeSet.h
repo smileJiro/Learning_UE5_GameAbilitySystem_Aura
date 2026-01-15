@@ -69,7 +69,37 @@ public:
 	// 그래서 PostGameplayEffectExecute()를 사용해야함
 	void PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue) override;
 	void PostGameplayEffectExecute(const FGameplayEffectModCallbackData& EffectData) override;
-public:
+	
+public: /* Primary Attributes */
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_Strength, Category = "Primary Attributes") 
+	FGameplayAttributeData Strength; // 힘
+	ATTRIBUTE_ACCESSORS(UAuraAttributeSet, Strength);
+	
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_Intelligence, Category = "Primary Attributes") 
+	FGameplayAttributeData Intelligence; // 지능
+	ATTRIBUTE_ACCESSORS(UAuraAttributeSet, Intelligence);
+	
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_Resilience, Category = "Primary Attributes") 
+	FGameplayAttributeData Resilience; // 회복력
+	ATTRIBUTE_ACCESSORS(UAuraAttributeSet, Resilience);
+	
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_Vigor, Category = "Primary Attributes") 
+	FGameplayAttributeData Vigor; // 활력
+	ATTRIBUTE_ACCESSORS(UAuraAttributeSet, Vigor);
+	
+	UFUNCTION()
+	void OnRep_Strength(const FGameplayAttributeData& OldStrength) const;
+	
+	UFUNCTION()
+	void OnRep_Intelligence(const FGameplayAttributeData& OldIntelligence) const;
+	
+	UFUNCTION()
+	void OnRep_Resilience(const FGameplayAttributeData& OldResilience) const;	
+	
+	UFUNCTION()
+	void OnRep_Vigor(const FGameplayAttributeData& OldVigor) const;
+	
+public: /* Vital Attributes */
 	// 올바른 Rep을 받기위해서는 Rep에 대한 notify 함수가 필요하고, 이를 uproperty에 명시
 	// UE에서의 컨벤션은 "OnRep_" 접두어를 붙인다.
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_Health, Category = "Vital Attributes")
