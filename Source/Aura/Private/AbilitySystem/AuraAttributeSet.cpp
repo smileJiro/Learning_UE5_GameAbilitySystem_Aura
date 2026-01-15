@@ -35,17 +35,17 @@ void UAuraAttributeSet::PreAttributeChange(const FGameplayAttribute& Attribute, 
 {
 	Super::PreAttributeChange(Attribute, NewValue);
 	
-	// Attribute는 == 연산을 지원한다. -> 
-	// Epic은 
+	// PreAttributeChange 시점에서 NewValue는 CurrentValue이다 -> 연산 모디파이어 연산 과정 중 일시적인 값 -> 그래도 클램핑 해주는 것이 안전?
+	//TODO:: MaxHealth가 변경되면 그에 맞게 Health도 한번 더 클램핑 해주는 것이 안전하다.
 	if (Attribute == GetHealthAttribute())
 	{
 		NewValue = FMath::Clamp<float>(NewValue, 0.f, GetMaxHealth());
-		UE_LOG(LogTemp, Warning, TEXT("Health: %f"), NewValue);
+		//UE_LOG(LogTemp, Warning, TEXT("Health: %f"), NewValue);
 	}
 	if (Attribute == GetManaAttribute())
 	{
 		NewValue = FMath::Clamp<float>(NewValue, 0.f, GetMaxMana());
-		UE_LOG(LogTemp, Warning, TEXT("Mana: %f"), NewValue);
+		//UE_LOG(LogTemp, Warning, TEXT("Mana: %f"), NewValue);
 	}
 }
 
@@ -91,7 +91,17 @@ void UAuraAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallba
 	
 	// 이제 Props를 가지고 다양한 효과들을 구현할수있다.
 	// 그러나 주의할 점은 Props 내의 데이터가 항상 전부 채워져있다는 가정은 하면안된다. nullptr일수있어.
-	Props;
+	
+	
+	// Clamp
+	if (EffectData.EvaluatedData.Attribute == GetHealthAttribute())
+	{
+		SetHealth(FMath::Clamp(GetHealth(), 0.f, GetMaxHealth()));
+	}
+	if (EffectData.EvaluatedData.Attribute == GetManaAttribute())
+	{
+		SetHealth(FMath::Clamp(GetMana(), 0.f, GetMaxMana()));
+	}
 }
 
 void UAuraAttributeSet::OnRep_Health(const FGameplayAttributeData& OldHealth) const
