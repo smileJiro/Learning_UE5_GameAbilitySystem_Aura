@@ -35,7 +35,7 @@
 
 ### 5. RPG Attribute System, Attribute Menu (Section 8-9, 진행 중 🏃‍♂️)
 - **Initialize Attribute from DT, GE**: Attribute를 초기화하는 다양한 루틴 학습
-- **Attribute Based Modifers And Modifier Order of Operations**: Attribute 값 기반 Modifiers 연산 방법 학습 및 연산 순서 규칙 학습
+- **Derived Attribute And Modifier Order of Operations**: Derived Attribute 학습 및 연산 순서 규칙 학습
 ---
 
 ## 📅 학습 로그 (log)
@@ -52,8 +52,8 @@
 - **2026.01.12**: GAS Attribute Clamping의 적절한 시점을 찾기위한 GAS 코드 분석
 - **2026.01.13**: AbilitySystemComponent.h GAS 코드 분석, GameplayTags 학습
 - **2026.01.14**: GameplayTags + DT Row + Deletgate 기반의 데이터 주도형(Data-Driven) UI 알림 시스템 구현 (포션 사용 등 인게임 이벤트 연출 최적화)
-- **2026.01.15**: HealthGlobe Widget GhostGlobe 기능 추가, GAS Attribute Clamping 리팩토링, Attribute 초기화 방법(DataTable, GameplayEffect) 학습,
-                  GE, DT를 사용해 Attribute 초기화, Modifiers 연산 순서 규칙 학습
+- **2026.01.15**: HealthGlobe Widget GhostGlobe 기능 추가, GAS Attribute Clamping 리팩토링, Attribute 초기화 방법(DataTable, GameplayEffect) 학습, GE, DT를 사용해 Attribute 초기화, Modifiers 연산 순서 규칙 학습
+- **2026.01.16**: Secondary(Derived) Attribute 추가, Attribute Menu Widget 구현 준비 작업
 
 ---
 
