@@ -23,9 +23,15 @@ public: /* IAbilitySystemInterface */
 	
 public:
 	UAttributeSet* GetAttributeSet() const;
+	
 protected:
-	virtual void BeginPlay() override;
-
+	void BeginPlay() override;
+	
+protected: /* GameplayEffect 실행시 호출되는 델리게이트에 등록하기 위한 가상 함수 */
+	virtual void	InitAbilityActorInfo();
+	void			InitializeDefaultAttributes() const;
+	void			ApplyEffectToSelf(const TSubclassOf<UGameplayEffect> GameplayEffectClass, const float level = 1.0f) const;
+	
 protected:
 #pragma region TObjectPtr Note
 	// 원시 포인터와 동일하게 작동하지만 에디터에서 액세스 추적 및 선택 적 지연 로드 등 다양한 기능이 추가
@@ -34,11 +40,7 @@ protected:
 #pragma endregion
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	TObjectPtr<USkeletalMeshComponent> Weapon;
-	
-protected: /* GameplayEffect 실행시 호출되는 델리게이트에 등록하기 위한 가상 함수 */
-	virtual void InitAbilityActorInfo();
-	void InitializePrimaryAttributes() const;
-	
+
 protected: // AuraEnemy 에서만 쓰는데 왜 이걸 CharacterBase에?
 	UPROPERTY()
 	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
@@ -48,4 +50,7 @@ protected: // AuraEnemy 에서만 쓰는데 왜 이걸 CharacterBase에?
 protected:
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Attributes")
 	TSubclassOf<UGameplayEffect> DefaultPrimaryAttributes;
+	
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Attributes")
+	TSubclassOf<UGameplayEffect> DefaultSecondaryAttributes;
 };

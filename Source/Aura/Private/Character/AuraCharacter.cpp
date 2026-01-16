@@ -43,7 +43,6 @@ void AAuraCharacter::OnRep_PlayerState()
 
 void AAuraCharacter::InitAbilityActorInfo()
 {
-	
 	AAuraPlayerState* AuraPlayerState = GetPlayerState<AAuraPlayerState>();
 	check(AuraPlayerState);
 	
@@ -66,5 +65,5 @@ void AAuraCharacter::InitAbilityActorInfo()
 	}
 	
 	// server에서만 호출되도 될듯함
-	InitializePrimaryAttributes();
+	InitializeDefaultAttributes();
 }
