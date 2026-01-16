@@ -1,12 +1,13 @@
 # ⚡ Learning-UE5-GameAbilitySystem-Aura
 
-언리얼 엔진 5의 Gameplay Ability System(GAS) 숙달을 위한 학습용 프로젝트입니다.  
-강의를 따라가며 기초부터 심화까지 직접 구현하며 이론, 디버깅노트 등을 기록하고 있습니다.
+언리얼 엔진 5의 Gameplay Ability System(GAS) 숙달을 위한 학습용 프로젝트입니다.
+멀티플레이 환경에서 GAS를 활용해 RPG 게임을 제작합니다.
+강의를 따라가며 튜토리얼 수준을 벗어나 언리얼 엔진 5의 숙련도를 높이고, GAS의 네트워크 예측과 복제, 확장성 높은 데이터 중심 프레임워크를 이해하고 활용하는 역량을 강화하는 목적을 가집니다.
 
 ## 📌 프로젝트 정보
 - **학습 목표**: GAS 아키텍처 이해, C++ 기반의 RPG 프레임워크 구축
 - **개발 환경**: UE 5.4+, C++, Rider
-- **진행 상황**: Section 7 (진행 중)
+- **진행 상황**: Section 8 (진행 중)
 
 ---
 
@@ -33,6 +34,8 @@
 - **AbilitySystemComponent**: `AbilitySystemComponent.h` 소스 코드 분석을 통해 내부 동작 원리 및 태그 관리 로직 학습
 
 ### 5. RPG Attribute System, Attribute Menu (Section 8-9, 진행 중 🏃‍♂️)
+- **Initialize Attribute from DT, GE**: Attribute를 초기화하는 다양한 루틴 학습
+- **Derived Attribute And Modifier Order of Operations**: Derived Attribute 학습 및 연산 순서 규칙 학습
 ---
 
 ## 📅 학습 로그 (log)
@@ -49,7 +52,8 @@
 - **2026.01.12**: GAS Attribute Clamping의 적절한 시점을 찾기위한 GAS 코드 분석
 - **2026.01.13**: AbilitySystemComponent.h GAS 코드 분석, GameplayTags 학습
 - **2026.01.14**: GameplayTags + DT Row + Deletgate 기반의 데이터 주도형(Data-Driven) UI 알림 시스템 구현 (포션 사용 등 인게임 이벤트 연출 최적화)
-- **2026.01.15**: HealthGlobe Widget GhostGlobe 기능 추가, GAS Attribute Clamping 리팩토링, Attribute 초기화 방법(DataTable, GameplayEffect) 학습
+- **2026.01.15**: HealthGlobe Widget GhostGlobe 기능 추가, GAS Attribute Clamping 리팩토링, Attribute 초기화 방법(DataTable, GameplayEffect) 학습, GE, DT를 사용해 Attribute 초기화, Modifiers 연산 순서 규칙 학습
+- **2026.01.16**: Secondary(Derived) Attribute 추가, Attribute Menu Widget 구현 준비 작업
 
 ---
 
