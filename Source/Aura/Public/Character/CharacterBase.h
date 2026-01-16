@@ -5,13 +5,14 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "AbilitySystemInterface.h"
+#include "Interaction/CombatInterface.h"
 
 #include "CharacterBase.generated.h" // .generated는 항상 마지막 include 여야한다.
 class UAbilitySystemComponent;
 class UAttributeSet;
 class UGameplayEffect;
 UCLASS()
-class AURA_API ACharacterBase : public ACharacter,  public IAbilitySystemInterface
+class AURA_API ACharacterBase : public ACharacter,  public IAbilitySystemInterface, public ICombatInterface
 {
 	GENERATED_BODY()
 

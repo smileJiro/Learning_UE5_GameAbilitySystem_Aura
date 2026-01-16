@@ -41,6 +41,14 @@ void AAuraCharacter::OnRep_PlayerState()
 	// 서버/클라의 Actor는 서로 다른 인스턴스(주소)이다.
 }
 
+int32 AAuraCharacter::GetPlayerLevel()
+{
+	const AAuraPlayerState* AuraPlayerState = Cast<AAuraPlayerState>( GetPlayerState());
+	check(AuraPlayerState);
+
+	return AuraPlayerState->GetPlayerLevel();
+}
+
 void AAuraCharacter::InitAbilityActorInfo()
 {
 	AAuraPlayerState* AuraPlayerState = GetPlayerState<AAuraPlayerState>();

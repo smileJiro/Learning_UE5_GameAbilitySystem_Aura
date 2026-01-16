@@ -19,13 +19,22 @@ public:
 	AAuraEnemy();
 
 	
-public: /** IInteractionInterface */
+public: // IInteractionInterface
 	void HighlightActor() override;
 	void UnHighlightActor() override;
+	
+public: // ICombatInterface
+	int32 GetPlayerLevel() override;
 	
 protected:
 	void BeginPlay() override;
 	
 private:
 	void InitAbilityActorInfo() override;
+	
+protected:
+	// Enemy Level은 복제하지 않는다.
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Character Class Defaults")
+	int32 Level = 1;
+
 };
