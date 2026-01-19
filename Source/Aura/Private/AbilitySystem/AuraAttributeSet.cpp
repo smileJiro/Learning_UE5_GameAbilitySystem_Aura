@@ -13,8 +13,10 @@ UAuraAttributeSet::UAuraAttributeSet()
 	// 이처럼 생성자에서 Attribute를 초기화하는 방법은 사실 그리 일반적인 방법은 아니다.
 	// GameplayEffect를 사용해 초기화하는 것이 가장 많이 사용되는 방식이라고 한다. 
 	// 강의에서는 DT를 사용해 초기화하는 방식도 추가로 설명할 예정인 것 같다.
-	InitHealth(50.f);
-	InitMana(100.f);
+	
+	// 리팩토링(75강) : 더이상 생성자에서 atrribute를 하드코딩으로 초기화하지 않는다. 
+	// InitHealth(50.f);
+	// InitMana(100.f);
 }
 
 void UAuraAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
@@ -122,7 +124,7 @@ void UAuraAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallba
 	}
 	if (EffectData.EvaluatedData.Attribute == GetManaAttribute())
 	{
-		SetHealth(FMath::Clamp(GetMana(), 0.f, GetMaxMana()));
+		SetMana(FMath::Clamp(GetMana(), 0.f, GetMaxMana()));
 	}
 }
 
