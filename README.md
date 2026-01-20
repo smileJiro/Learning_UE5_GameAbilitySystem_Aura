@@ -34,8 +34,9 @@
 - **AbilitySystemComponent**: `AbilitySystemComponent.h` 소스 코드 분석을 통해 내부 동작 원리 및 태그 관리 로직 학습
 
 ### 5. RPG Attribute System, Attribute Menu (Section 8-9, 진행 중 🏃‍♂️)
-- **Initialize Attribute from DT, GE**: Attribute를 초기화하는 다양한 루틴 학습
+- **Initialize Attribute from DT, GE**: Attribute를 초기화하는 다양한 루틴 학습(생성자, DataTable, GameplayEffect)
 - **Derived Attribute And Modifier Order of Operations**: Derived Attribute 학습 및 연산 순서 규칙 학습
+- **ModMagnitudeCalculation(MMC)**: MMC를 활용해 사용자 지정 연산 처리 -> 외부 데이터 활용 + 복잡한 연산 처리에 특화
 ---
 
 ## 📅 학습 로그 (log)
@@ -54,6 +55,7 @@
 - **2026.01.14**: GameplayTags + DT Row + Deletgate 기반의 데이터 주도형(Data-Driven) UI 알림 시스템 구현 (포션 사용 등 인게임 이벤트 연출 최적화)
 - **2026.01.15**: HealthGlobe Widget GhostGlobe 기능 추가, GAS Attribute Clamping 리팩토링, Attribute 초기화 방법(DataTable, GameplayEffect) 학습, GE, DT를 사용해 Attribute 초기화, Modifiers 연산 순서 규칙 학습
 - **2026.01.16**: Secondary(Derived) Attribute 추가, Attribute Menu Widget 구현 준비 작업
+- **2026.01.19**: ModMagnitudeCalculation로 Modifier 연산 구현(MaxHealth, MaxMana 처리), Level 데이터는 Attribute가 MMC를 통해 구현함, Health의 BaseValue 버그 해결
 
 ---
 
