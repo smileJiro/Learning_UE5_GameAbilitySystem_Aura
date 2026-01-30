@@ -45,5 +45,4 @@ private:
 private:
 	IInteractionInterface* PrevCursorHitActor = nullptr;
 	IInteractionInterface* CurCursorHitActor = nullptr;
-
 };
